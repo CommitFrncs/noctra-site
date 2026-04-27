@@ -1,0 +1,877 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Join Noctra 's WhatsApp TV — get exclusive deals, new product drops, and flash sales sent straight to your WhatsApp."
+        />
+        <title>WhatsApp TV — Noctra</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <style>
+            /* Page-specific extras */
+            .tv-stat-row {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1px;
+                background: var(--border);
+                border-radius: var(--radius-lg);
+                overflow: hidden;
+                margin-top: 2.5rem;
+            }
+            .tv-stat {
+                background: var(--surface);
+                padding: 1.25rem 1rem;
+                text-align: center;
+            }
+            .tv-stat__num {
+                font-family: var(--font-display);
+                font-size: 1.6rem;
+                font-weight: 800;
+                color: var(--wa-green);
+                letter-spacing: -0.04em;
+            }
+            .tv-stat__label {
+                font-size: 0.75rem;
+                color: var(--text-2);
+                margin-top: 0.2rem;
+            }
+
+            .faq {
+                padding: 3rem 0;
+                border-top: 1px solid var(--border);
+            }
+            .faq__list {
+                display: flex;
+                flex-direction: column;
+                gap: 1px;
+                background: var(--border);
+                border-radius: var(--radius-lg);
+                overflow: hidden;
+                margin-top: 2rem;
+            }
+            .faq__item {
+                background: var(--surface);
+                padding: 1.25rem 1.5rem;
+            }
+            .faq__item h4 {
+                font-size: 0.9rem;
+                font-weight: 600;
+                margin-bottom: 0.4rem;
+            }
+            .faq__item p {
+                font-size: 0.82rem;
+                color: var(--text-2);
+                line-height: 1.6;
+            }
+
+            .testimonials {
+                padding: 3rem 0;
+                border-top: 1px solid var(--border);
+            }
+            .testimonials__grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                margin-top: 2rem;
+            }
+            .testimonial-card {
+                background: var(--surface);
+                border: 1px solid var(--border);
+                border-radius: var(--radius-lg);
+                padding: 1.5rem;
+            }
+            .testimonial-card__text {
+                font-size: 0.88rem;
+                color: var(--text-2);
+                line-height: 1.65;
+                font-style: italic;
+            }
+            .testimonial-card__author {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                margin-top: 1.1rem;
+            }
+            .testimonial-card__avatar {
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                background: var(--surface-2);
+                border: 1px solid var(--border);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.9rem;
+            }
+            .testimonial-card__name {
+                font-size: 0.82rem;
+                font-weight: 600;
+            }
+            .testimonial-card__handle {
+                font-size: 0.75rem;
+                color: var(--text-3);
+            }
+
+            @media (min-width: 640px) {
+                .testimonials__grid {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+                .tv-hero__inner {
+                    flex-direction: row;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    gap: 3rem;
+                }
+                .tv-hero__content {
+                    flex: 1;
+                }
+                .tv-hero__aside {
+                    flex-shrink: 0;
+                    width: 260px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- ═══ NAV ════════════════════════════════ -->
+        <header class="nav">
+            <div class="container nav__inner">
+                <a href="index.html" class="nav__logo"><span>Noctra</span></a>
+
+                <nav class="nav__links" aria-label="Primary">
+                    <a href="index.html" class="nav__link">Home</a>
+                    <a href="catalog.html" class="nav__link">Catalog</a>
+                    <a href="tv.html" class="nav__link active">WhatsApp TV</a>
+                    <a
+                        href="#"
+                        data-wa-contact
+                        class="btn btn-primary nav__cta desktop-only"
+                    >
+                        Contact Us
+                    </a>
+                </nav>
+
+                <button
+                    class="nav__burger"
+                    id="navBurger"
+                    aria-expanded="false"
+                    aria-label="Toggle menu"
+                >
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+
+            <div class="nav__mobile" id="navMobile">
+                <a href="index.html">Home</a>
+                <a href="catalog.html">Catalog</a>
+                <a href="tv.html">WhatsApp TV</a>
+                <a href="#" data-wa-contact>Contact on WhatsApp</a>
+            </div>
+        </header>
+
+        <main>
+            <!-- ═══ TV HERO ═══════════════════════════ -->
+            <section class="tv-hero">
+                <div class="container">
+                    <div
+                        class="tv-hero__inner"
+                        style="display: flex; flex-direction: column; gap: 2rem"
+                    >
+                        <div class="tv-hero__content">
+                            <div class="tv-hero__icon">📺</div>
+
+                            <div style="margin-top: 1.25rem">
+                                <p class="section-label">
+                                    WhatsApp Broadcast Channel
+                                </p>
+                                <h1 class="tv-hero__title">
+                                    Noctra <br />
+                                    <span>WhatsApp TV</span>
+                                </h1>
+                                <p class="tv-hero__sub">
+                                    Subscribe to our free WhatsApp channel and
+                                    get exclusive deals, new product drops,
+                                    restocks, and flash sales — sent directly to
+                                    your WhatsApp. No spam. No stress.
+                                </p>
+                            </div>
+
+                            <div
+                                style="
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    gap: 0.75rem;
+                                    margin-top: 1.75rem;
+                                "
+                            >
+                                <a
+                                    href="#"
+                                    data-wa-channel
+                                    class="btn btn-outline"
+                                    target="_blank"
+                                    rel="noopener"
+                                >
+                                    <svg
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="currentColor"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                                        />
+                                    </svg>
+                                    Join WhatsApp TV — Free
+                                </a>
+                                <a href="catalog.html" class="btn btn-outline"
+                                    >Browse Catalog</a
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Aside: mock channel preview card -->
+                        <div class="tv-hero__aside">
+                            <div
+                                style="
+                                    background: var(--surface);
+                                    border: 1px solid var(--border);
+                                    border-radius: var(--radius-lg);
+                                    overflow: hidden;
+                                "
+                            >
+                                <!-- mock WA channel header -->
+                                <div
+                                    style="
+                                        background: #075e54;
+                                        padding: 1rem 1.25rem;
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 0.75rem;
+                                    "
+                                >
+                                    <div
+                                        style="
+                                            width: 40px;
+                                            height: 40px;
+                                            border-radius: 50%;
+                                            background: #128c7e;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            font-size: 1.2rem;
+                                            flex-shrink: 0;
+                                        "
+                                    >
+                                        📺
+                                    </div>
+                                    <div>
+                                        <div
+                                            style="
+                                                font-size: 0.85rem;
+                                                font-weight: 700;
+                                                color: #fff;
+                                            "
+                                        >
+                                            ✧˖°. 𝓝𝓸𝓬𝓽𝓻𝓪 𝓣𝓥 . °˖✧
+                                        </div>
+                                        <div
+                                            style="
+                                                font-size: 0.7rem;
+                                                color: rgba(
+                                                    255,
+                                                    255,
+                                                    255,
+                                                    0.65
+                                                );
+                                            "
+                                        >
+                                            WhatsApp Channel · 5+ followers
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- mock messages -->
+                                <div
+                                    style="
+                                        padding: 1rem;
+                                        display: flex;
+                                        flex-direction: column;
+                                        gap: 0.75rem;
+                                        background: #0a1628;
+                                    "
+                                >
+                                    <div
+                                        style="
+                                            background: #1f2d3d;
+                                            border-radius: 8px 8px 8px 0;
+                                            padding: 0.75rem;
+                                            max-width: 85%;
+                                        "
+                                    >
+                                        <div
+                                            style="
+                                                font-size: 0.75rem;
+                                                color: #25d366;
+                                                font-weight: 600;
+                                                margin-bottom: 0.25rem;
+                                            "
+                                        >
+                                            Noctra
+                                        </div>
+                                        <p
+                                            style="
+                                                font-size: 0.78rem;
+                                                color: #e2e8f0;
+                                                line-height: 1.5;
+                                            "
+                                        >
+                                            🚨 <strong>FLASH SALE</strong> —
+                                            Wireless Gaming Headset now ₦18,000
+                                            (was ₦22,000). Only 5 left!
+                                        </p>
+                                        <div
+                                            style="
+                                                font-size: 0.65rem;
+                                                color: rgba(
+                                                    255,
+                                                    255,
+                                                    255,
+                                                    0.35
+                                                );
+                                                margin-top: 0.35rem;
+                                                text-align: right;
+                                            "
+                                        >
+                                            09:14 AM ✓✓
+                                        </div>
+                                    </div>
+                                    <div
+                                        style="
+                                            background: #1f2d3d;
+                                            border-radius: 8px 8px 8px 0;
+                                            padding: 0.75rem;
+                                            max-width: 85%;
+                                        "
+                                    >
+                                        <div
+                                            style="
+                                                font-size: 0.75rem;
+                                                color: #25d366;
+                                                font-weight: 600;
+                                                margin-bottom: 0.25rem;
+                                            "
+                                        >
+                                            Noctra
+                                        </div>
+                                        <p
+                                            style="
+                                                font-size: 0.78rem;
+                                                color: #e2e8f0;
+                                                line-height: 1.5;
+                                            "
+                                        >
+                                            🆕 Just restocked: 20,000mAh Power
+                                            Banks. Tap to order 👇
+                                        </p>
+                                        <div
+                                            style="
+                                                font-size: 0.65rem;
+                                                color: rgba(
+                                                    255,
+                                                    255,
+                                                    255,
+                                                    0.35
+                                                );
+                                                margin-top: 0.35rem;
+                                                text-align: right;
+                                            "
+                                        >
+                                            11:30 AM ✓✓
+                                        </div>
+                                    </div>
+                                    <div
+                                        style="
+                                            background: #1f2d3d;
+                                            border-radius: 8px 8px 8px 0;
+                                            padding: 0.75rem;
+                                            max-width: 85%;
+                                        "
+                                    >
+                                        <div
+                                            style="
+                                                font-size: 0.75rem;
+                                                color: #25d366;
+                                                font-weight: 600;
+                                                margin-bottom: 0.25rem;
+                                            "
+                                        >
+                                            Noctra
+                                        </div>
+                                        <p
+                                            style="
+                                                font-size: 0.78rem;
+                                                color: #e2e8f0;
+                                                line-height: 1.5;
+                                            "
+                                        >
+                                            📦 Weekly Drop: 5 new products added
+                                            to the catalog. Check them out!
+                                        </p>
+                                        <div
+                                            style="
+                                                font-size: 0.65rem;
+                                                color: rgba(
+                                                    255,
+                                                    255,
+                                                    255,
+                                                    0.35
+                                                );
+                                                margin-top: 0.35rem;
+                                                text-align: right;
+                                            "
+                                        >
+                                            2:00 PM ✓✓
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    style="
+                                        padding: 0.75rem 1.25rem;
+                                        background: var(--surface);
+                                        border-top: 1px solid var(--border);
+                                        text-align: center;
+                                    "
+                                >
+                                    <span
+                                        style="
+                                            font-size: 0.72rem;
+                                            color: var(--text-3);
+                                        "
+                                        >Preview of what you'll receive</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="tv-stat-row">
+                        <div class="tv-stat">
+                            <div class="tv-stat__num">500+</div>
+                            <div class="tv-stat__label">Subscribers</div>
+                        </div>
+                        <div class="tv-stat">
+                            <div class="tv-stat__num">3–5×</div>
+                            <div class="tv-stat__label">Posts per week</div>
+                        </div>
+                        <div class="tv-stat">
+                            <div class="tv-stat__num">100%</div>
+                            <div class="tv-stat__label">Free to join</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══ BENEFITS ══════════════════════════ -->
+            <section class="tv-benefits">
+                <div class="container">
+                    <p class="section-label">What you get</p>
+                    <h2 class="section-title">Why join Noctra TV?</h2>
+
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <div class="benefit-icon">🔥</div>
+                            <div>
+                                <h3>Flash Sales First</h3>
+                                <p>
+                                    TV subscribers get access to flash sales and
+                                    limited discounts hours before we post them
+                                    anywhere else. First come, first served.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">📦</div>
+                            <div>
+                                <h3>New Drop Alerts</h3>
+                                <p>
+                                    Every time we add new products to the
+                                    catalog, you're the first to know. New
+                                    gaming gear, tech accessories, and home
+                                    essentials weekly.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">🔄</div>
+                            <div>
+                                <h3>Restock Notifications</h3>
+                                <p>
+                                    Popular items sell out fast. TV subscribers
+                                    get pinged the moment hot items come back in
+                                    stock. Never miss out again.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">💡</div>
+                            <div>
+                                <h3>Buying Tips &amp; Guides</h3>
+                                <p>
+                                    Short, useful content on choosing the right
+                                    gear. Headset comparisons, charger guides,
+                                    setup tips — practical stuff, not filler.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">🎁</div>
+                            <div>
+                                <h3>Subscriber Perks</h3>
+                                <p>
+                                    Occasional giveaways and exclusive coupon
+                                    codes — only for channel subscribers. Our
+                                    way of saying thanks.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">🔕</div>
+                            <div>
+                                <h3>Zero Spam</h3>
+                                <p>
+                                    We post 3–5 times a week — only when there's
+                                    something worth sharing. No random forwards,
+                                    no irrelevant content.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══ HOW IT WORKS ══════════════════════ -->
+            <section class="tv-how">
+                <div class="container">
+                    <p class="section-label">How it works</p>
+                    <h2 class="section-title">3 steps to never miss a deal</h2>
+
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step__num">1</div>
+                            <div class="step__content">
+                                <h4>Tap "Join WhatsApp TV"</h4>
+                                <p>
+                                    Hit the green button on this page. It opens
+                                    WhatsApp directly — no sign-up, no form, no
+                                    email required.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step__num">2</div>
+                            <div class="step__content">
+                                <h4>Follow the channel</h4>
+                                <p>
+                                    You'll land on the Noctra TV channel page
+                                    inside WhatsApp. Tap "Follow" and you're in.
+                                    That's all.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step__num">3</div>
+                            <div class="step__content">
+                                <h4>Get deals in your Updates tab</h4>
+                                <p>
+                                    Channel posts appear in your WhatsApp
+                                    "Updates" tab — separate from your chats. No
+                                    noise, just deals when we post them.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        style="
+                            background: var(--surface);
+                            border: 1px solid var(--border);
+                            border-radius: var(--radius-lg);
+                            padding: 1.25rem 1.5rem;
+                            margin-top: 2rem;
+                            display: flex;
+                            align-items: flex-start;
+                            gap: 0.85rem;
+                        "
+                    >
+                        <span
+                            style="
+                                font-size: 1.2rem;
+                                flex-shrink: 0;
+                                margin-top: 0.05rem;
+                            "
+                            >ℹ️</span
+                        >
+                        <div>
+                            <p
+                                style="
+                                    font-size: 0.82rem;
+                                    color: var(--text-2);
+                                    line-height: 1.65;
+                                "
+                            >
+                                WhatsApp Channels are one-way broadcast — only
+                                we post, you can't be seen by other subscribers.
+                                Your number stays private. You can leave anytime
+                                from within WhatsApp.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══ TESTIMONIALS ══════════════════════ -->
+            <section class="testimonials">
+                <div class="container">
+                    <p class="section-label">What subscribers say</p>
+                    <h2 class="section-title">Real people, real results</h2>
+
+                    <div class="testimonials__grid">
+                        <div class="testimonial-card">
+                            <p class="testimonial-card__text">
+                                "Caught a flash sale on a power bank through the
+                                channel. Saved ₦3,500 compared to the regular
+                                price. Definitely worth joining."
+                            </p>
+                            <div class="testimonial-card__author">
+                                <div class="testimonial-card__avatar">👤</div>
+                                <div>
+                                    <div class="testimonial-card__name">
+                                        Tunde A.
+                                    </div>
+                                    <div class="testimonial-card__handle">
+                                        University student, Lagos
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="testimonial-card__text">
+                                "I always get notified when gaming gear drops.
+                                Already copped a wireless headset and a
+                                controller. Channel doesn't spam, which I
+                                appreciate."
+                            </p>
+                            <div class="testimonial-card__author">
+                                <div class="testimonial-card__avatar">🎮</div>
+                                <div>
+                                    <div class="testimonial-card__name">
+                                        Seun O.
+                                    </div>
+                                    <div class="testimonial-card__handle">
+                                        Gamer, Ibadan
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="testimonial-card__text">
+                                "My whole hostel floor is subbed now. Someone
+                                shared a deal in our group chat and we all
+                                joined. Posts are clean, prices are real."
+                            </p>
+                            <div class="testimonial-card__author">
+                                <div class="testimonial-card__avatar">🏠</div>
+                                <div>
+                                    <div class="testimonial-card__name">
+                                        Chisom N.
+                                    </div>
+                                    <div class="testimonial-card__handle">
+                                        300 Level, Enugu
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══ FAQ ═══════════════════════════════ -->
+            <section class="faq">
+                <div class="container">
+                    <p class="section-label">FAQ</p>
+                    <h2 class="section-title">Questions about the channel</h2>
+
+                    <div class="faq__list">
+                        <div class="faq__item">
+                            <h4>Is it really free to join?</h4>
+                            <p>
+                                Yes. Completely free. No subscription fee, no
+                                hidden cost. Just tap the button and follow.
+                            </p>
+                        </div>
+                        <div class="faq__item">
+                            <h4>Will other subscribers see my number?</h4>
+                            <p>
+                                No. WhatsApp Channels are one-directional
+                                broadcasts. Only the channel admin (us) posts.
+                                Your number is never visible to anyone else.
+                            </p>
+                        </div>
+                        <div class="faq__item">
+                            <h4>How many posts do you send per week?</h4>
+                            <p>
+                                Typically 3–5 posts a week. We only post when
+                                there's a new product, flash sale, restock, or
+                                something genuinely useful. No filler.
+                            </p>
+                        </div>
+                        <div class="faq__item">
+                            <h4>Can I leave the channel anytime?</h4>
+                            <p>
+                                Yes. Open the channel in WhatsApp, tap the
+                                three-dot menu, and select "Unfollow." You're
+                                out instantly, no drama.
+                            </p>
+                        </div>
+                        <div class="faq__item">
+                            <h4>
+                                How do I order after seeing a deal on the
+                                channel?
+                            </h4>
+                            <p>
+                                Every channel post includes a direct WhatsApp
+                                chat link or points you to the catalog. Tap it,
+                                send a message, and we'll sort your order from
+                                there.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══ FINAL CTA ══════════════════════════ -->
+            <section class="tv-cta">
+                <div class="container">
+                    <div class="tv-cta__box">
+                        <h2 class="section-title">
+                            Ready to catch every deal?
+                        </h2>
+                        <p>
+                            Join 500+ subscribers already getting exclusive
+                            deals on tech, gaming gear, and home essentials.
+                            Takes 10 seconds.
+                        </p>
+                        <div class="tv-cta__actions">
+                            <a
+                                href="#"
+                                data-wa-channel
+                                target="_blank"
+                                rel="noopener"
+                                class="btn btn-wa-lg"
+                            >
+                                <svg
+                                    width="18"
+                                    height="18"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                                    />
+                                </svg>
+                                Join WhatsApp TV — Free
+                            </a>
+                            <a href="catalog.html" class="btn btn-outline"
+                                >Browse Products</a
+                            >
+                        </div>
+                        <p class="tv-cta__note">
+                            Free · No spam · Leave anytime · 500+ already
+                            subscribed
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- ═══ FOOTER ═══════════════════════════════ -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__inner">
+                    <div class="footer__brand">
+                        <a href="index.html" class="nav__logo"
+                            ><span>Noctra</span></a
+                        >
+                        <p>
+                            Affordable tech, gaming gear, and home essentials —
+                            delivered via WhatsApp.
+                        </p>
+                        <div style="margin-top: 1rem">
+                            <a
+                                href="#"
+                                data-wa-contact
+                                class="footer__wa-badge"
+                            >
+                                <svg
+                                    width="13"
+                                    height="13"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                                    />
+                                </svg>
+                                WhatsApp us
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer__links">
+                        <h4>Shop</h4>
+                        <ul>
+                            <li><a href="catalog.html">All Products</a></li>
+                            <li>
+                                <a href="catalog.html?filter=Gaming Gear"
+                                    >Gaming Gear</a
+                                >
+                            </li>
+                            <li>
+                                <a href="catalog.html?filter=Tech"
+                                    >Tech Accessories</a
+                                >
+                            </li>
+                            <li>
+                                <a href="catalog.html?filter=Home"
+                                    >Home Essentials</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__links">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li>
+                                <a href="#" data-wa-contact>WhatsApp Chat</a>
+                            </li>
+                            <li><a href="tv.html">WhatsApp TV</a></li>
+                            <li><a href="index.html#about">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer__bottom">
+                    <span>© 2026 Noctra . All rights reserved.</span>
+                    <span>Made with ♥ for students &amp; gamers</span>
+                </div>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>
